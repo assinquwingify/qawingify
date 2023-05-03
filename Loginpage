@@ -1,0 +1,65 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Login_Page {
+
+	public static void main(String[] args) throws InterruptedException  {
+		
+		
+	ChromeOptions co = new ChromeOptions();
+		
+	co.addArguments("--remote-allow-origins=*");
+		
+	WebDriver driver = new ChromeDriver(co);
+	
+	driver.get("https://sakshingp.github.io/assignment/login.html");
+		
+	driver.manage().window().maximize();
+	
+	driver.findElement(By.xpath("//img[@src=\"img/twitter.png\"]")).click();
+	
+	Thread.sleep(2000);
+    
+    System.out.println("this doesn't contain hyperlink");
+    
+    driver.findElement(By.xpath("//img[@src=\"img/facebook.png\"]")).click();
+    
+    Thread.sleep(2000);
+    
+    System.out.println("this doesn't contain hyperlink");
+    
+    driver.findElement(By.xpath("//img[@src=\"img/linkedin.png\"]")).click();
+    
+    Thread.sleep(2000);
+    
+    System.out.println("this doesn't contain hyperlink");
+	
+	 driver.findElement(By.id("username")).sendKeys("thilipkumar");
+	 
+     driver.findElement(By.xpath("//input[@type='password']")).sendKeys("NEINDMX");
+     
+     driver.findElement(By.className("form-check-input")).click();
+     
+     Thread.sleep(5000);
+     
+     driver.findElement(By.id("log-in")).click();
+     
+     driver.findElement(By.tagName("h1"));
+     
+     System.out.println("Login Successful");
+     
+     Thread.sleep(7000);
+     
+     driver.findElement(By.id("amount")).click();
+     
+     System.out.println("Value sorted ");
+     
+     Thread.sleep(7000);
+     	
+     driver.quit();
+		 
+	}
+}
+
